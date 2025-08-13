@@ -1,0 +1,12 @@
+version: '3'
+services:
+  srm-api:
+    build: .
+    ports:
+      - "9000:9000"
+    environment:
+      - NODE_ENV=production
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - MONGODB_URI=${MONGODB_URI}
+      - API_ENDPOINT=${API_ENDPOINT}
+    restart: unless-stopped 
